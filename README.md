@@ -28,4 +28,4 @@ jobs:
           serverless config credentials --provider aws --key ${{secrets.AWS_ACCESS_KEY_ID}} --secret ${{secrets.AWS_SECRET_ACCESS_KEY}}
           serverless deploy --stage production
 ```
-The code in the current repo is for those with an AWS Educate account. For normal users please use the above code in your GH Actions workflow
+The code in the current repo is for those with an AWS Educate account or an account with a session token. For normal users please use the above code in your GH Actions workflow
