@@ -18,7 +18,12 @@ jobs:
         run: |
           touch .env
           echo "API_KEY=${{secrets.API_KEY}}" >> .env
+    - name: Configure AWS credentials for account with session token
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY}}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
+        aws-region: us-east-1
       - name: deploy
-        run: |
-          echo ${{secrets.AWS_EDUCATE_CONFIG}} >> ~/.aws/credentials
-          serverless deploy --stage production
+        run: serverless deploy --stage production
