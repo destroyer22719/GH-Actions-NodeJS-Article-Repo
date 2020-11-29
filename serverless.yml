@@ -6,6 +6,8 @@ provider:
   runtime: nodejs12.x
 
 functions:
-  hello:
+  app:
     handler: app.hello
-
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
