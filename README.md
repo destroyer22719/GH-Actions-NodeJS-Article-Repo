@@ -1,5 +1,5 @@
 ### Set up a CD workflow for NodeJS to AWS Lambda
-This is the original article that I wrote: 
+This is the original article that I wrote: https://dev.to/destroyer22719/set-up-a-cd-workflow-for-nodejs-to-aws-lambda-4c26
 
 ## Code for `deploy.yaml`
 ```yaml
