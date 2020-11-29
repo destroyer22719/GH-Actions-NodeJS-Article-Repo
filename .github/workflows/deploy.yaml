@@ -20,5 +20,5 @@ jobs:
           echo "API_KEY=${{secrets.API_KEY}}" >> .env
       - name: deploy
         run: |
-          serverless config credentials --provider aws --key ${{secrets.AWS_ACCESS_KEY}} --secret ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          echo ${{secrets.AWS_EDUCATE_CONFIG}} >> ~/.aws/credentials
           serverless deploy --stage production
